@@ -1,0 +1,127 @@
+/* ============================================================
+   CHARACTER CARD
+   --accent is injected inline from character.accentColor
+   ============================================================ */
+
+.character-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+
+  background: var(--color-bg-card);
+  border-radius: var(--radius-card);
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  overflow: hidden;
+
+  transition:
+    box-shadow   var(--transition-base),
+    transform    var(--transition-spring),
+    border-color var(--transition-base);
+}
+
+.character-card:hover {
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--accent, var(--color-primary)) 28%, transparent);
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--accent, var(--color-primary)) 60%, transparent);
+}
+
+/* ── Image wrap ── */
+.character-card__image-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent, var(--color-primary)) 14%, white);
+  border: 2.5px solid color-mix(in srgb, var(--accent, var(--color-primary)) 35%, transparent);
+  flex-shrink: 0;
+  transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.character-card:hover .character-card__image-wrap {
+  background: color-mix(in srgb, var(--accent, var(--color-primary)) 22%, white);
+}
+
+.character-card__image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform var(--transition-spring);
+}
+
+.character-card:hover .character-card__image {
+  transform: scale(1.08) translateY(-4px);
+}
+
+/* ── Body ── */
+.character-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  z-index: 1;
+}
+
+.character-card__category {
+  background: color-mix(in srgb, var(--accent, var(--color-primary)) 16%, white);
+  color: color-mix(in srgb, var(--accent, var(--color-primary)) 80%, var(--color-text));
+  text-transform: capitalize;
+}
+
+.character-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+}
+
+.character-card__description {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+  max-width: 220px;
+}
+
+/* ── Decorative blob (bottom-right) ── */
+.character-card__blob {
+  position: absolute;
+  bottom: -28px;
+  right: -28px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent, var(--color-primary)) 12%, transparent);
+  pointer-events: none;
+  transition: background var(--transition-base);
+}
+
+/* ── Large variant (Characters page grid) ── */
+.character-card--large .character-card__image-wrap {
+  width: 200px;
+  height: 200px;
+}
+
+.character-card--large .character-card__name {
+  font-size: var(--text-xl);
+}
+
+.character-card--large .character-card__description {
+  font-size: var(--text-base);
+  max-width: 260px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .character-card--large .character-card__image-wrap {
+    width: 160px;
+    height: 160px;
+  }
+}

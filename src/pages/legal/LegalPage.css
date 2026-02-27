@@ -1,0 +1,87 @@
+/* ============================================================
+   LEGAL PAGE (Terms of Service / Privacy Policy)
+   ============================================================ */
+
+.legal-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Hero ── */
+.legal-page__hero {
+  background:
+    radial-gradient(ellipse 55% 70% at 80% 50%, var(--color-secondary-light) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 55% at 20% 60%, var(--color-primary-light)   0%, transparent 55%),
+    var(--color-bg-soft);
+  padding-block: var(--space-16) var(--space-10);
+}
+
+.legal-page__hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.legal-page__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-extrabold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+}
+
+.legal-page__updated {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* ── Body ── */
+.legal-page__body {
+  background: var(--color-bg);
+}
+
+.legal-page__intro {
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-8);
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+/* ── Sections ── */
+.legal-page__sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.legal-page__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.legal-page__section:last-child {
+  border-bottom: none;
+}
+
+.legal-page__section-heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+}
+
+.legal-page__section-body {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .legal-page__title { font-size: var(--text-2xl); }
+}

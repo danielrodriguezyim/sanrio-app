@@ -1,0 +1,14 @@
+/* ============================================================
+   HOME PAGE
+   Section stacking and page-level spacing tweaks.
+   ============================================================ */
+
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tighten the gap between Hero wave and the next section */
+.home > .character-carousel {
+  margin-top: calc(var(--space-8) * -1);
+}

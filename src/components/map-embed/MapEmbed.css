@@ -1,0 +1,38 @@
+/* ============================================================
+   MAP EMBED
+   ============================================================ */
+
+.map-embed {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  /* Prevent Leaflet controls from leaking outside */
+  position: relative;
+}
+
+.map-embed__map {
+  width: 100%;
+  height: 420px;
+}
+
+/* ── Leaflet popup override — keep it on-brand ── */
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+  font-family: var(--font-body) !important;
+  font-size: var(--text-sm) !important;
+  color: var(--color-text) !important;
+  padding: var(--space-1) !important;
+}
+
+.leaflet-popup-tip {
+  background: #fff !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .map-embed__map {
+    height: 300px;
+  }
+}

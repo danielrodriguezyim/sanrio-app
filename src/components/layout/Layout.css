@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh; /* dvh accounts for mobile browser chrome */
+}
+
+.layout__main {
+  flex: 1;
+  /* Offset for the fixed header so no content hides underneath */
+  padding-top: var(--header-height);
+}
+
+@media (max-width: 767px) {
+  .layout__main {
+    padding-top: var(--header-height-sm);
+  }
+}

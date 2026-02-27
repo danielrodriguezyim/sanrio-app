@@ -1,0 +1,82 @@
+[
+  {
+    "id": "hello-kitty",
+    "name": "Hello Kitty",
+    "description": "The original icon. A cheerful girl who loves baking cookies and collecting cute things.",
+    "imageUrl": "/images/characters/hello-kitty.png",
+    "accentColor": "#f472b6",
+    "category": "classic"
+  },
+  {
+    "id": "my-melody",
+    "name": "My Melody",
+    "description": "A sweet bunny from Mariland who adores her red hood and her pet mouse, Flat.",
+    "imageUrl": "/images/characters/my-melody.png",
+    "accentColor": "#f9a8d4",
+    "category": "classic"
+  },
+  {
+    "id": "cinnamoroll",
+    "name": "Cinnamoroll",
+    "description": "A fluffy white puppy with big blue eyes and a plump, sweet-smelling tail.",
+    "imageUrl": "/images/characters/cinnamoroll.png",
+    "accentColor": "#a5b4fc",
+    "category": "classic"
+  },
+  {
+    "id": "kuromi",
+    "name": "Kuromi",
+    "description": "My Melody's rival, a mischievous imp who secretly loves romance novels.",
+    "imageUrl": "/images/characters/kuromi.png",
+    "accentColor": "#c084fc",
+    "category": "classic"
+  },
+  {
+    "id": "pompompurin",
+    "name": "Pompompurin",
+    "description": "A golden retriever with a love for pudding and napping in cozy spots.",
+    "imageUrl": "/images/characters/pompompurin.png",
+    "accentColor": "#fbbf24",
+    "category": "friends"
+  },
+  {
+    "id": "keroppi",
+    "name": "Keroppi",
+    "description": "An energetic frog from Donut Pond who excels at swimming and baseball.",
+    "imageUrl": "/images/characters/keroppi.png",
+    "accentColor": "#4ade80",
+    "category": "friends"
+  },
+  {
+    "id": "badtz-maru",
+    "name": "Badtz-Maru",
+    "description": "A mischievous penguin with a spiky hairdo and a love for skateboarding.",
+    "imageUrl": "/images/characters/badtz-maru.png",
+    "accentColor": "#6b7280",
+    "category": "friends"
+  },
+  {
+    "id": "pochacco",
+    "name": "Pochacco",
+    "description": "A sporty white dog who enjoys playing soccer and hanging out with friends.",
+    "imageUrl": "/images/characters/pochacco.png",
+    "accentColor": "#60a5fa",
+    "category": "friends"
+  },
+  {
+    "id": "chococat",
+    "name": "Chococat",
+    "description": "A curious black cat with big ears and a love for gadgets and technology.",
+    "imageUrl": "/images/characters/chococat.png",
+    "accentColor": "#374151",
+    "category": "friends"
+  },
+  {
+    "id": "little-twin-stars",
+    "name": "Little Twin Stars",
+    "description": "Kiki and Lala, twin siblings from the stars who spread happiness and dreams wherever they go.",
+    "imageUrl": "/images/characters/little-twin-stars.png",
+    "accentColor": "#a78bfa",
+    "category": "friends"
+  }
+]
