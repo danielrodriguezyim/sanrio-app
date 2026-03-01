@@ -209,7 +209,7 @@ npm run build
 
 ### Design Inspiration
 - [Dribbble — Kawaii UI](https://dribbble.com/search/kawaii-ui) — Pastel interface exploration
-- [Sanrio on Pinterest](https://www.pinterest.com/sanrioofficial/) — Official brand imagery and colour references
+- [Sanrio on Pinterest](https://www.pinterest.com/sanrio/) — Official brand imagery and colour references
 - [Google Fonts — Baloo 2](https://fonts.google.com/specimen/Baloo+2) — Rounded display typeface
 - [CSS-Tricks — A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) — Flexbox reference
 
