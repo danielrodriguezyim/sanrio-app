@@ -1,14 +1,9 @@
-/* ============================================================
-   PRODUCT CARD
-   ============================================================ */
-
 .product-card {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-/* ── Image ── */
 .product-card__image-wrap {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -28,7 +23,6 @@
   transform: scale(1.06);
 }
 
-/* ── Badges ── */
 .product-card__badges {
   position: absolute;
   top: var(--space-3);
@@ -48,7 +42,6 @@
   color: var(--color-accent);
 }
 
-/* ── Body ── */
 .product-card__body {
   display: flex;
   flex-direction: column;
@@ -70,14 +63,12 @@
   color: var(--color-text-muted);
   line-height: var(--leading-normal);
 
-  /* Clamp to 2 lines */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
-/* ── Footer row ── */
 .product-card__footer {
   display: flex;
   align-items: center;

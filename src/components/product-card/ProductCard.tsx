@@ -1,16 +1,6 @@
 import type { Product } from '../../types/product';
 import './ProductCard.css';
 
-/* ----------------------------------------------------------------
-   IMAGE SPEC — product card thumbnails:
-   Files : hosted URLs stored directly in Firestore (imageUrl field)
-           OR public/images/products/{product.id}.jpg for local assets
-   Size  : 400 × 400 px, square crop, JPEG quality 85
-   Displayed at 100% width of card (max ~280 px on desktop grid)
-   Use placehold.co URLs in Firestore seed data during development:
-     https://placehold.co/400x400/fce7f3/db2777?text=Product+Name
-   ---------------------------------------------------------------- */
-
 interface ProductCardProps {
   product: Product;
 }
@@ -33,9 +23,8 @@ const ProductCard = ({ product }: ProductCardProps) => {
           loading="lazy"
         />
 
-        {/* Badges — only render what applies */}
         <div className="product-card__badges">
-          {isNew      && <span className="badge product-card__badge product-card__badge--new">New</span>}
+          {isNew && <span className="badge product-card__badge product-card__badge--new">New</span>}
           {isFeatured && <span className="badge product-card__badge product-card__badge--featured">★ Featured</span>}
         </div>
       </div>

@@ -1,12 +1,8 @@
-/* ============================================================
-   HERO
-   ============================================================ */
-
 .hero {
   position: relative;
   overflow: hidden;
 
-  background-image: url('/images/sanrio-characters.jpg'), radial-gradient(ellipse 80% 60% at 70% 40%, var(--color-secondary-light) 0%, transparent 65%), radial-gradient(ellipse 60% 80% at 10% 60%, var(--color-primary-light)   0%, transparent 60%), radial-gradient(ellipse 50% 50% at 90% 90%, var(--color-accent-light)    0%, transparent 55%);
+  background-image: url('/images/sanrio-characters.jpg'), radial-gradient(ellipse 80% 60% at 70% 40%, var(--color-secondary-light) 0%, transparent 65%), radial-gradient(ellipse 60% 80% at 10% 60%, var(--color-primary-light) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 90% 90%, var(--color-accent-light) 0%, transparent 55%);
   background-size: cover;
   background-position: center top;
 
@@ -16,7 +12,6 @@
   align-items: center;
 }
 
-/* ── Floating decorative shapes ── */
 .hero__shape {
   position: absolute;
   font-size: 1.2rem;
@@ -28,13 +23,48 @@
   animation-delay: var(--delay, 0s);
 }
 
-.hero__shape--1 { top: 12%;  left:  8%;  font-size: 1.6rem; --duration: 3.2s; --delay: 0s;    }
-.hero__shape--2 { top: 20%;  right: 12%; font-size: 1.0rem; --duration: 2.8s; --delay: 0.5s;  }
-.hero__shape--3 { top: 55%;  left:  4%;  font-size: 1.4rem; --duration: 3.5s; --delay: 1.0s;  color: var(--color-accent); }
-.hero__shape--4 { bottom:20%;right: 6%;  font-size: 1.2rem; --duration: 3.0s; --delay: 0.8s;  color: var(--color-secondary); }
-.hero__shape--5 { bottom:10%;left: 40%;  font-size: 0.9rem; --duration: 2.6s; --delay: 1.4s;  }
+.hero__shape--1 {
+  top: 12%;
+  left: 8%;
+  font-size: 1.6rem;
+  --duration: 3.2s;
+  --delay: 0s;
+}
 
-/* ── Inner two-column layout ── */
+.hero__shape--2 {
+  top: 20%;
+  right: 12%;
+  font-size: 1.0rem;
+  --duration: 2.8s;
+  --delay: 0.5s;
+}
+
+.hero__shape--3 {
+  top: 55%;
+  left: 4%;
+  font-size: 1.4rem;
+  --duration: 3.5s;
+  --delay: 1.0s;
+  color: var(--color-accent);
+}
+
+.hero__shape--4 {
+  bottom: 20%;
+  right: 6%;
+  font-size: 1.2rem;
+  --duration: 3.0s;
+  --delay: 0.8s;
+  color: var(--color-secondary);
+}
+
+.hero__shape--5 {
+  bottom: 10%;
+  left: 40%;
+  font-size: 0.9rem;
+  --duration: 2.6s;
+  --delay: 1.4s;
+}
+
 .hero__inner {
   display: flex;
   align-items: center;
@@ -43,7 +73,6 @@
   flex-wrap: wrap;
 }
 
-/* ── Content (left column) ── */
 .hero__content {
   display: flex;
   flex-direction: column;
@@ -71,12 +100,9 @@
 .hero__title-accent {
   color: var(--color-primary-dark);
 
-  /* Gradient text */
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-dark) 0%,
-    var(--color-secondary-dark) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-primary-dark) 0%,
+      var(--color-secondary-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -95,7 +121,6 @@
   gap: var(--space-4);
 }
 
-/* ── Trust strip ── */
 .hero__trust {
   display: flex;
   flex-wrap: wrap;
@@ -118,7 +143,6 @@
   background: var(--color-border-strong);
 }
 
-/* ── Visual (right column) ── */
 .hero__visual {
   position: relative;
   flex: 0 1 460px;
@@ -126,7 +150,6 @@
   z-index: var(--z-raised);
 }
 
-/* Portrait bubbles */
 .hero__portrait {
   position: absolute;
   display: flex;
@@ -175,7 +198,6 @@
   z-index: 1;
 }
 
-/* ── Bottom wave ── */
 .hero__wave {
   position: absolute;
   bottom: -1px;
@@ -189,16 +211,26 @@
   height: 64px;
 }
 
-/* ── Responsive ── */
 @media (max-width: 1023px) {
   .hero__visual {
     flex: 0 1 340px;
     height: 320px;
   }
 
-  .hero__portrait--primary   { width: 240px; height: 240px; }
-  .hero__portrait--secondary { width: 200px; height: 200px; }
-  .hero__portrait--tertiary  { width: 180px; height: 180px; }
+  .hero__portrait--primary {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero__portrait--secondary {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero__portrait--tertiary {
+    width: 180px;
+    height: 180px;
+  }
 }
 
 @media (max-width: 899px) {
@@ -219,7 +251,9 @@
     flex: 1 1 100%;
   }
 
-  .hero__title { font-size: var(--text-2xl); }
+  .hero__title {
+    font-size: var(--text-2xl);
+  }
 
   .hero__visual {
     flex: 0 0 280px;
@@ -228,9 +262,24 @@
     height: 260px;
   }
 
-  .hero__portrait--primary   { width: 190px; height: 190px; }
-  .hero__portrait--secondary { width: 180px; height: 180px; right: 0; }
-  .hero__portrait--tertiary  { width: 170px; height: 170px; left:  0; }
+  .hero__portrait--primary {
+    width: 190px;
+    height: 190px;
+  }
 
-  .hero__trust { justify-content: center; }
+  .hero__portrait--secondary {
+    width: 180px;
+    height: 180px;
+    right: 0;
+  }
+
+  .hero__portrait--tertiary {
+    width: 170px;
+    height: 170px;
+    left: 0;
+  }
+
+  .hero__trust {
+    justify-content: center;
+  }
 }

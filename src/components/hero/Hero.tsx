@@ -1,34 +1,21 @@
-import { NavLink }              from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { motion, type Variants } from 'framer-motion';
 
 import { ROUTES } from '../../router/routes';
 import './Hero.css';
 
-/* ----------------------------------------------------------------
-   IMAGE SPEC — hero background (optional upgrade path):
-   File : public/images/hero-bg.jpg
-   Size : 1440 × 680 px  (2× for retina: 2880 × 1360 px)
-   Format: JPEG, quality 85. Keep file under 250 KB.
-   Usage: Replace the CSS gradient in Hero.css with:
-     background-image: url('/images/hero-bg.jpg');
-     background-size: cover;
-     background-position: center top;
-   The overlay div already handles text legibility.
-   ---------------------------------------------------------------- */
-
 const containerVariants: Variants = {
-  hidden:  {},
+  hidden: {},
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
 const itemVariants: Variants = {
-  hidden:  { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
 };
 
 const Hero = () => (
   <section className="hero" aria-label="Welcome banner">
-    {/* Decorative floating shapes */}
     <span className="hero__shape hero__shape--1" aria-hidden="true">✦</span>
     <span className="hero__shape hero__shape--2" aria-hidden="true">★</span>
     <span className="hero__shape hero__shape--3" aria-hidden="true">♡</span>
@@ -66,7 +53,6 @@ const Hero = () => (
           </NavLink>
         </motion.div>
 
-        {/* Trust strip */}
         <motion.div className="hero__trust" variants={itemVariants}>
           <span className="hero__trust-item">♡ Since 1960</span>
           <span className="hero__trust-sep" aria-hidden="true" />
@@ -76,21 +62,12 @@ const Hero = () => (
         </motion.div>
       </motion.div>
 
-      {/* Character showcase strip — 3 floating placeholder circles
-          Replace src values with real character images when available */}
       <motion.div
         className="hero__visual"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* IMAGE SPEC — hero character portraits:
-            Files : public/images/characters/hello-kitty.png  (primary)
-                    public/images/characters/my-melody.png    (secondary)
-                    public/images/characters/cinnamoroll.png  (tertiary)
-            Size  : 320 × 320 px each, transparent PNG
-            Usage : Displayed at 220 px, 180 px, and 160 px respectively
-                    inside .hero__portrait elements below.             */}
         <div className="hero__portrait hero__portrait--primary">
           <img
             src="/images/portraits/hello-kitty-circle.png"
@@ -121,7 +98,6 @@ const Hero = () => (
       </motion.div>
     </div>
 
-    {/* Bottom wave */}
     <div className="hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 64" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path

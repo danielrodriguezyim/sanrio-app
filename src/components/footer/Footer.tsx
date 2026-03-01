@@ -13,32 +13,32 @@ import './Footer.css';
 
 interface SocialLink {
   label: string;
-  href:  string;
-  icon:  ReactElement;
+  href: string;
+  icon: ReactElement;
 }
 
 interface FooterLink {
   label: string;
-  path:  string;
+  path: string;
 }
 
 const SOCIAL_LINKS: SocialLink[] = [
-  { label: 'Instagram', href: 'https://www.instagram.com/sanrio/',               icon: <FaInstagram /> },
-  { label: 'X / Twitter', href: 'https://twitter.com/sanrio',                    icon: <FaXTwitter /> },
-  { label: 'YouTube',   href: 'https://www.youtube.com/@HelloKittyandFriends',     icon: <FaYoutube /> },
-  { label: 'TikTok',   href: 'https://www.tiktok.com/@sanrio',          icon: <FaTiktok /> },
-  { label: 'Pinterest', href: 'https://www.pinterest.com/sanrio/',       icon: <FaPinterest /> },
+  { label: 'Instagram', href: 'https://www.instagram.com/sanrio/', icon: <FaInstagram /> },
+  { label: 'X / Twitter', href: 'https://twitter.com/sanrio', icon: <FaXTwitter /> },
+  { label: 'YouTube', href: 'https://www.youtube.com/@HelloKittyandFriends', icon: <FaYoutube /> },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@sanrio', icon: <FaTiktok /> },
+  { label: 'Pinterest', href: 'https://www.pinterest.com/sanrio/', icon: <FaPinterest /> },
 ];
 
 const NAV_LINKS: FooterLink[] = [
-  { label: 'Home',       path: ROUTES.HOME },
+  { label: 'Home', path: ROUTES.HOME },
   { label: 'Characters', path: ROUTES.CHARACTERS },
-  { label: 'Contact',    path: ROUTES.CONTACT },
+  { label: 'Contact', path: ROUTES.CONTACT },
 ];
 
 const LEGAL_LINKS: FooterLink[] = [
   { label: 'Terms of Service', path: ROUTES.TOS },
-  { label: 'Privacy Policy',   path: ROUTES.PRIVACY },
+  { label: 'Privacy Policy', path: ROUTES.PRIVACY },
 ];
 
 const currentYear = new Date().getFullYear();
@@ -46,17 +46,14 @@ const currentYear = new Date().getFullYear();
 const Footer = () => (
   <footer className="footer">
 
-    {/* Decorative top divider */}
     <div className="footer__divider-row" aria-hidden="true">
       <hr className="divider" />
     </div>
 
-    {/* Dot-pattern top strip */}
     <div className="footer__dots dot-bg" aria-hidden="true" />
 
     <div className="footer__inner container">
 
-      {/* ── Column 1 — Brand ── */}
       <div className="footer__col footer__col--brand">
         <NavLink to={ROUTES.HOME} className="footer__logo" aria-label="Sanrio homepage">
           <span className="footer__logo-star" aria-hidden="true">★</span>
@@ -70,7 +67,6 @@ const Footer = () => (
           Spreading happiness since 1960.
         </p>
 
-        {/* Social icons */}
         <ul className="footer__socials" aria-label="Social media links">
           {SOCIAL_LINKS.map(({ label, href, icon }) => (
             <li key={label}>
@@ -88,7 +84,6 @@ const Footer = () => (
         </ul>
       </div>
 
-      {/* ── Column 2 — Navigation ── */}
       <div className="footer__col">
         <h3 className="footer__col-heading">Explore</h3>
         <ul className="footer__link-list">
@@ -102,7 +97,6 @@ const Footer = () => (
         </ul>
       </div>
 
-      {/* ── Column 3 — Legal ── */}
       <div className="footer__col">
         <h3 className="footer__col-heading">Legal</h3>
         <ul className="footer__link-list">
@@ -115,7 +109,6 @@ const Footer = () => (
           ))}
         </ul>
 
-        {/* Newsletter teaser */}
         <div className="footer__newsletter">
           <p className="footer__newsletter-text">
             Get kawaii news in your inbox ✉︎
@@ -127,7 +120,6 @@ const Footer = () => (
       </div>
     </div>
 
-    {/* ── Bottom bar ── */}
     <div className="footer__bottom">
       <div className="container footer__bottom-inner">
         <p className="footer__copyright">

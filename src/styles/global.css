@@ -1,8 +1,3 @@
-/* ============================================================
-   GLOBAL STYLES
-   Import order: variables → global (in main.tsx)
-   ============================================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
 @import './variables.css';
 @import 'swiper/css';
@@ -68,7 +63,12 @@ ol {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
   line-height: var(--leading-tight);
@@ -82,14 +82,37 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: var(--tracking-tight);
 }
 
-.heading-1 { font-size: var(--text-3xl); font-weight: var(--weight-extrabold); }
-.heading-2 { font-size: var(--text-2xl); font-weight: var(--weight-bold); }
-.heading-3 { font-size: var(--text-xl);  font-weight: var(--weight-bold); }
-.heading-4 { font-size: var(--text-lg);  font-weight: var(--weight-semibold); }
+.heading-1 {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-extrabold);
+}
 
-.text-muted { color: var(--color-text-muted); }
-.text-sm    { font-size: var(--text-sm); }
-.text-xs    { font-size: var(--text-xs); }
+.heading-2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+}
+
+.heading-3 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+}
+
+.heading-4 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-sm {
+  font-size: var(--text-sm);
+}
+
+.text-xs {
+  font-size: var(--text-xs);
+}
 
 /* --- Layout Utilities --- */
 .container {
@@ -108,15 +131,46 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Flex helpers used across the app */
-.flex         { display: flex; }
-.flex-col     { display: flex; flex-direction: column; }
-.flex-center  { display: flex; align-items: center; justify-content: center; }
-.flex-between { display: flex; align-items: center; justify-content: space-between; }
-.flex-wrap    { flex-wrap: wrap; }
-.gap-2        { gap: var(--space-2); }
-.gap-4        { gap: var(--space-4); }
-.gap-6        { gap: var(--space-6); }
-.gap-8        { gap: var(--space-8); }
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
 
 /* --- Section Spacing --- */
 .section {
@@ -253,26 +307,33 @@ select:focus-visible {
 .divider {
   width: 100%;
   height: 1.5px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-border),
-    var(--color-primary-light),
-    var(--color-border),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      var(--color-border),
+      var(--color-primary-light),
+      var(--color-border),
+      transparent);
   border: none;
 }
 
 /* --- Scrollbar (Webkit) --- */
-::-webkit-scrollbar       { width: 8px; }
-::-webkit-scrollbar-track { background: var(--color-bg-soft); }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-soft);
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary-light);
   border-radius: var(--radius-pill);
   border: 2px solid var(--color-bg-soft);
 }
-::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
 
 /* --- Selection --- */
 ::selection {
@@ -282,44 +343,101 @@ select:focus-visible {
 
 /* --- Animations --- */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in-down {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes scale-in {
-  from { opacity: 0; transform: scale(0.94); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.animate-fade-in   { animation: fade-in 0.5s ease both; }
-.animate-scale-in  { animation: scale-in 0.4s ease both; }
-.animate-float     { animation: float 3s ease-in-out infinite; }
+.animate-fade-in {
+  animation: fade-in 0.5s ease both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
 
 /* Staggered children */
-.stagger > *:nth-child(1) { animation-delay: 0ms;   }
-.stagger > *:nth-child(2) { animation-delay: 80ms;  }
-.stagger > *:nth-child(3) { animation-delay: 160ms; }
-.stagger > *:nth-child(4) { animation-delay: 240ms; }
-.stagger > *:nth-child(5) { animation-delay: 320ms; }
-.stagger > *:nth-child(6) { animation-delay: 400ms; }
+.stagger>*:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.stagger>*:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.stagger>*:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.stagger>*:nth-child(4) {
+  animation-delay: 240ms;
+}
+
+.stagger>*:nth-child(5) {
+  animation-delay: 320ms;
+}
+
+.stagger>*:nth-child(6) {
+  animation-delay: 400ms;
+}
 
 /* --- Responsive visibility --- */
 @media (max-width: 767px) {
-  .hide-on-mobile { display: none !important; }
+  .hide-on-mobile {
+    display: none !important;
+  }
 
   .container {
     padding-inline: var(--space-4);
@@ -329,11 +447,21 @@ select:focus-visible {
     padding-block: var(--space-12);
   }
 
-  .heading-display { font-size: var(--text-2xl); }
-  .heading-1       { font-size: var(--text-xl);  }
-  .heading-2       { font-size: var(--text-lg);  }
+  .heading-display {
+    font-size: var(--text-2xl);
+  }
+
+  .heading-1 {
+    font-size: var(--text-xl);
+  }
+
+  .heading-2 {
+    font-size: var(--text-lg);
+  }
 }
 
 @media (min-width: 768px) {
-  .hide-on-desktop { display: none !important; }
+  .hide-on-desktop {
+    display: none !important;
+  }
 }

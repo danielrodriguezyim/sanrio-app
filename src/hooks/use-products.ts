@@ -1,19 +1,19 @@
 import { useState, useEffect, useMemo } from 'react';
 
-import { fetchProducts }        from '../firebase/database-service';
-import type { Product }         from '../types/product';
+import { fetchProducts } from '../firebase/database-service';
+import type { Product } from '../types/product';
 import type { ProductCategory } from '../types/product';
 
 interface UseProductsResult {
-  products:  Product[];
+  products: Product[];
   isLoading: boolean;
-  hasError:  boolean;
+  hasError: boolean;
 }
 
 const useProducts = (category: ProductCategory): UseProductsResult => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
-  const [isLoading,   setIsLoading]   = useState(true);
-  const [hasError,    setHasError]    = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     let isCancelled = false;
@@ -38,7 +38,6 @@ const useProducts = (category: ProductCategory): UseProductsResult => {
     return () => { isCancelled = true; };
   }, []);
 
-  /* Category filtering is client-side — no DB query needed per filter */
   const products = useMemo(
     () =>
       category === 'all'

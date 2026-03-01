@@ -1,12 +1,7 @@
-/* ============================================================
-   CHARACTER CAROUSEL
-   ============================================================ */
-
 .character-carousel {
   background: var(--color-bg-soft);
 }
 
-/* ── Section header ── */
 .character-carousel__header {
   display: flex;
   align-items: flex-end;
@@ -22,17 +17,15 @@
   margin-top: var(--space-2);
 }
 
-/* ── Swiper overrides ── */
 .character-carousel__swiper {
-  padding-bottom: var(--space-10) !important; /* room for pagination dots */
-  overflow: visible !important;               /* allow card lift to show shadow */
+  padding-bottom: var(--space-10) !important;
+  overflow: visible !important;
 }
 
 .character-carousel__slide {
-  height: auto; /* equalise card heights across the row */
+  height: auto;
 }
 
-/* Pagination dots */
 .character-carousel__swiper .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
@@ -47,7 +40,6 @@
   border-radius: var(--radius-pill);
 }
 
-/* ── Responsive ── */
 @media (max-width: 767px) {
   .character-carousel__header {
     flex-direction: column;

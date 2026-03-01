@@ -1,11 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
-import { NavLink }              from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import CharacterCard   from '../character-card/CharacterCard';
-import charactersData  from '../../data/characters.json';
+import CharacterCard from '../character-card/CharacterCard';
+import charactersData from '../../data/characters.json';
 import type { Character } from '../../types/character';
-import { ROUTES }      from '../../router/routes';
+import { ROUTES } from '../../router/routes';
 import './CharacterCarousel.css';
 
 const characters = charactersData as Character[];
@@ -37,8 +37,8 @@ const CharacterCarousel = () => (
         autoplay={{ delay: 3800, disableOnInteraction: false, pauseOnMouseEnter: true }}
         pagination={{ clickable: true }}
         breakpoints={{
-          560:  { slidesPerView: 2 },
-          900:  { slidesPerView: 3 },
+          560: { slidesPerView: 2 },
+          900: { slidesPerView: 3 },
           1200: { slidesPerView: 4 },
         }}
         className="character-carousel__swiper"

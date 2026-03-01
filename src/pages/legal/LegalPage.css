@@ -1,17 +1,12 @@
-/* ============================================================
-   LEGAL PAGE (Terms of Service / Privacy Policy)
-   ============================================================ */
-
 .legal-page {
   display: flex;
   flex-direction: column;
 }
 
-/* ── Hero ── */
 .legal-page__hero {
   background:
     radial-gradient(ellipse 55% 70% at 80% 50%, var(--color-secondary-light) 0%, transparent 60%),
-    radial-gradient(ellipse 45% 55% at 20% 60%, var(--color-primary-light)   0%, transparent 55%),
+    radial-gradient(ellipse 45% 55% at 20% 60%, var(--color-primary-light) 0%, transparent 55%),
     var(--color-bg-soft);
   padding-block: var(--space-16) var(--space-10);
 }
@@ -35,7 +30,6 @@
   color: var(--color-text-muted);
 }
 
-/* ── Body ── */
 .legal-page__body {
   background: var(--color-bg);
 }
@@ -49,7 +43,6 @@
   border-bottom: 1.5px solid var(--color-border);
 }
 
-/* ── Sections ── */
 .legal-page__sections {
   display: flex;
   flex-direction: column;
@@ -81,7 +74,8 @@
   line-height: var(--leading-loose);
 }
 
-/* ── Responsive ── */
 @media (max-width: 767px) {
-  .legal-page__title { font-size: var(--text-2xl); }
+  .legal-page__title {
+    font-size: var(--text-2xl);
+  }
 }

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import CategoryFilter from '../category-filter/CategoryFilter';
-import ProductCard    from '../product-card/ProductCard';
-import useProducts    from '../../hooks/use-products';
+import ProductCard from '../product-card/ProductCard';
+import useProducts from '../../hooks/use-products';
 import type { ProductCategory } from '../../types/product';
 import './ProductGrid.css';
 
@@ -13,7 +13,7 @@ const ProductGrid = () => {
 
   const renderContent = () => {
     if (isLoading) return <ProductGridSkeleton />;
-    if (hasError)  return <ProductGridError />;
+    if (hasError) return <ProductGridError />;
     if (products.length === 0) return <ProductGridEmpty />;
 
     return (
@@ -46,7 +46,6 @@ const ProductGrid = () => {
   );
 };
 
-/* ── Skeleton loader — 8 placeholder cards ── */
 const ProductGridSkeleton = () => (
   <ul className="product-grid__list" aria-label="Loading products">
     {Array.from({ length: 8 }).map((_, i) => (

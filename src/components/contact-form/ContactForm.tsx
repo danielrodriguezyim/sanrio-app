@@ -37,7 +37,6 @@ const ContactForm = () => {
       noValidate
       aria-label="Contact form"
     >
-      {/* Name + Email row */}
       <div className="contact-form__row">
         <div className="contact-form__field">
           <label htmlFor="contact-name" className="contact-form__label">
@@ -83,7 +82,6 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Subject */}
       <div className="contact-form__field">
         <label htmlFor="contact-subject" className="contact-form__label">
           Subject <span aria-hidden="true">*</span>
@@ -100,7 +98,6 @@ const ContactForm = () => {
         )}
       </div>
 
-      {/* Message */}
       <div className="contact-form__field">
         <label htmlFor="contact-message" className="contact-form__label">
           Message <span aria-hidden="true">*</span>

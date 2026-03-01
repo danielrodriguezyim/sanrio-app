@@ -1,16 +1,11 @@
 import { ref, get, push, set } from 'firebase/database';
 
-import { db }                   from './firebase-config';
-import type { Product }         from '../types/product';
+import { db } from './firebase-config';
+import type { Product } from '../types/product';
 
-/* ── Paths ── */
-const PRODUCTS_PATH         = 'products';
+const PRODUCTS_PATH = 'products';
 const CONTACT_MESSAGES_PATH = 'contact-messages';
 
-/* ── Product ── */
-
-/* The RTDB snapshot value is a plain object keyed by push ID.
-   We attach the key as `id` to match the Product interface.    */
 const mapSnapshotToProducts = (
   value: Record<string, Omit<Product, 'id'>>
 ): Product[] =>
@@ -24,11 +19,10 @@ export const fetchProducts = async (): Promise<Product[]> => {
   return mapSnapshotToProducts(snapshot.val());
 };
 
-/* ── Contact message ── */
 
 export interface ContactMessagePayload {
-  name:    string;
-  email:   string;
+  name: string;
+  email: string;
   subject: string;
   message: string;
 }

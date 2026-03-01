@@ -1,18 +1,18 @@
 import { useState, useEffect, useCallback } from 'react';
-import { NavLink }                           from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { ROUTES } from '../../router/routes';
 import './Header.css';
 
 interface NavItem {
   label: string;
-  path:  string;
+  path: string;
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Home',       path: ROUTES.HOME },
+  { label: 'Home', path: ROUTES.HOME },
   { label: 'Characters', path: ROUTES.CHARACTERS },
-  { label: 'Contact',    path: ROUTES.CONTACT },
+  { label: 'Contact', path: ROUTES.CONTACT },
 ];
 
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
-  const closeMenu  = () => setIsMenuOpen(false);
+  const closeMenu = () => setIsMenuOpen(false);
 
   const handleScroll = useCallback(() => {
     setIsScrolled(window.scrollY > 12);
@@ -31,7 +31,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  /* Close menu on resize to desktop width */
   useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 768px)');
     const handleResize = () => { if (mediaQuery.matches) closeMenu(); };
@@ -39,7 +38,6 @@ const Header = () => {
     return () => mediaQuery.removeEventListener('change', handleResize);
   }, []);
 
-  /* Prevent body scroll while mobile menu is open */
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -47,15 +45,9 @@ const Header = () => {
 
   return (
     <>
-      {/* ── Header bar ──
-          NOTE: backdrop-filter on this element would create a new containing
-          block for position:fixed children, trapping them inside the 60px bar.
-          The mobile menu and backdrop are therefore siblings (via Fragment),
-          not children of this element.                                        */}
       <header className={`header${isScrolled ? ' header--scrolled' : ''}`}>
         <div className="header__inner container">
 
-          {/* Logo */}
           <NavLink
             to={ROUTES.HOME}
             className="header__logo"
@@ -67,7 +59,6 @@ const Header = () => {
             <span className="header__logo-star" aria-hidden="true">★</span>
           </NavLink>
 
-          {/* Desktop nav */}
           <nav className="header__nav hide-on-mobile" aria-label="Main navigation">
             <ul className="header__nav-list">
               {NAV_ITEMS.map(({ label, path }) => (
@@ -86,7 +77,6 @@ const Header = () => {
             </ul>
           </nav>
 
-          {/* Desktop CTA */}
           <NavLink
             to={ROUTES.CHARACTERS}
             className="btn btn--primary btn--sm hide-on-mobile"
@@ -94,7 +84,6 @@ const Header = () => {
             Explore ✦
           </NavLink>
 
-          {/* Hamburger */}
           <button
             className={`header__hamburger hide-on-desktop${isMenuOpen ? ' header__hamburger--open' : ''}`}
             onClick={toggleMenu}
@@ -109,8 +98,6 @@ const Header = () => {
         </div>
       </header>
 
-      {/* ── Mobile menu — rendered outside <header> so it is not subject
-          to the backdrop-filter containing block restriction            ── */}
       <div
         id="mobile-menu"
         className={`header__mobile-menu hide-on-desktop${isMenuOpen ? ' header__mobile-menu--open' : ''}`}
@@ -144,7 +131,6 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Backdrop */}
       {isMenuOpen && (
         <div
           className="header__backdrop hide-on-desktop"

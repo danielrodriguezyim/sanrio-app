@@ -1,25 +1,19 @@
-/* ============================================================
-   PRODUCT GRID
-   ============================================================ */
-
 .product-grid {
   background: var(--color-bg);
 }
 
-/* ── Product list (grid via flex) ── */
 .product-grid__list {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-6);
 }
 
-.product-grid__list > li {
+.product-grid__list>li {
   flex: 1 1 240px;
   max-width: calc(25% - var(--space-6) * 3 / 4);
   min-width: 220px;
 }
 
-/* ── Skeleton ── */
 .product-grid__skeleton {
   flex: 1 1 240px;
   max-width: calc(25% - var(--space-6) * 3 / 4);
@@ -50,15 +44,27 @@
   animation: shimmer 1.6s ease-in-out infinite;
 }
 
-.product-grid__skeleton-line--title { height: 16px; width: 70%; }
-.product-grid__skeleton-line--short { width: 40%; }
-
-@keyframes shimmer {
-  0%, 100% { opacity: 0.5; }
-  50%       { opacity: 1;   }
+.product-grid__skeleton-line--title {
+  height: 16px;
+  width: 70%;
 }
 
-/* ── Empty / Error states ── */
+.product-grid__skeleton-line--short {
+  width: 40%;
+}
+
+@keyframes shimmer {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 .product-grid__message {
   display: flex;
   flex-direction: column;
@@ -74,16 +80,17 @@
   line-height: 1;
 }
 
-/* ── Responsive ── */
 @media (max-width: 1100px) {
-  .product-grid__list > li,
+
+  .product-grid__list>li,
   .product-grid__skeleton {
     max-width: calc(33.333% - var(--space-6) * 2 / 3);
   }
 }
 
 @media (max-width: 700px) {
-  .product-grid__list > li,
+
+  .product-grid__list>li,
   .product-grid__skeleton {
     max-width: calc(50% - var(--space-6) / 2);
     min-width: 150px;
@@ -91,7 +98,8 @@
 }
 
 @media (max-width: 440px) {
-  .product-grid__list > li,
+
+  .product-grid__list>li,
   .product-grid__skeleton {
     max-width: 100%;
   }

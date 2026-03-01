@@ -1,7 +1,3 @@
-/* ============================================================
-   404 NOT FOUND PAGE
-   ============================================================ */
-
 .not-found {
   position: relative;
   display: flex;
@@ -11,7 +7,7 @@
   overflow: hidden;
 
   background:
-    radial-gradient(ellipse 70% 60% at 30% 40%, var(--color-primary-light)   0%, transparent 60%),
+    radial-gradient(ellipse 70% 60% at 30% 40%, var(--color-primary-light) 0%, transparent 60%),
     radial-gradient(ellipse 60% 70% at 80% 60%, var(--color-secondary-light) 0%, transparent 55%),
     var(--color-bg-soft);
 }
@@ -40,11 +36,9 @@
   letter-spacing: var(--tracking-tight);
   line-height: 1;
 
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-dark) 0%,
-    var(--color-secondary-dark) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-primary-dark) 0%,
+      var(--color-secondary-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -71,7 +65,6 @@
   margin-top: var(--space-4);
 }
 
-/* ── Floating shapes ── */
 .not-found__shapes {
   position: absolute;
   inset: 0;
@@ -89,14 +82,35 @@
   animation: float 3s ease-in-out infinite;
 }
 
-.not-found__shapes span:nth-child(1) { animation-delay: 0s;   }
-.not-found__shapes span:nth-child(2) { animation-delay: 0.5s; color: var(--color-secondary); }
-.not-found__shapes span:nth-child(3) { animation-delay: 1.0s; color: var(--color-accent); }
-.not-found__shapes span:nth-child(4) { animation-delay: 1.5s; }
-.not-found__shapes span:nth-child(5) { animation-delay: 2.0s; color: var(--color-secondary); }
+.not-found__shapes span:nth-child(1) {
+  animation-delay: 0s;
+}
 
-/* ── Responsive ── */
+.not-found__shapes span:nth-child(2) {
+  animation-delay: 0.5s;
+  color: var(--color-secondary);
+}
+
+.not-found__shapes span:nth-child(3) {
+  animation-delay: 1.0s;
+  color: var(--color-accent);
+}
+
+.not-found__shapes span:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.not-found__shapes span:nth-child(5) {
+  animation-delay: 2.0s;
+  color: var(--color-secondary);
+}
+
 @media (max-width: 767px) {
-  .not-found__code { font-size: 4.5rem; }
-  .not-found__title { font-size: var(--text-xl); }
+  .not-found__code {
+    font-size: 4.5rem;
+  }
+
+  .not-found__title {
+    font-size: var(--text-xl);
+  }
 }

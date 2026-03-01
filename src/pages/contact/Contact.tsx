@@ -1,18 +1,17 @@
 import { motion } from 'framer-motion';
 
 import ContactForm from '../../components/contact-form/ContactForm';
-import MapEmbed    from '../../components/map-embed/MapEmbed';
+import MapEmbed from '../../components/map-embed/MapEmbed';
 import './Contact.css';
 
 const fadeUp = {
-  hidden:  { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
 const Contact = () => (
   <div className="contact">
 
-    {/* ── Page header ── */}
     <section className="contact__hero">
       <div className="container contact__hero-inner">
         <motion.h1
@@ -36,12 +35,10 @@ const Contact = () => (
       </div>
     </section>
 
-    {/* ── Main content ── */}
     <section className="contact__body section">
       <div className="container">
         <div className="contact__grid">
 
-          {/* Left — form */}
           <motion.div
             className="contact__form-col"
             variants={fadeUp}
@@ -53,7 +50,6 @@ const Contact = () => (
             <ContactForm />
           </motion.div>
 
-          {/* Right — info + map */}
           <motion.div
             className="contact__info-col"
             variants={fadeUp}

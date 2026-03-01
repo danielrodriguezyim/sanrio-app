@@ -1,11 +1,6 @@
-/* ============================================================
-   CONTACT PAGE
-   ============================================================ */
-
-/* ── Hero ── */
 .contact__hero {
   background:
-    radial-gradient(ellipse 60% 80% at 90% 50%, var(--color-primary-light)   0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 50%, var(--color-primary-light) 0%, transparent 60%),
     radial-gradient(ellipse 50% 60% at 10% 60%, var(--color-secondary-light) 0%, transparent 55%),
     var(--color-bg-soft);
   padding-block: var(--space-16) var(--space-10);
@@ -34,7 +29,6 @@
   line-height: var(--leading-loose);
 }
 
-/* ── Two-column grid ── */
 .contact__body {
   background: var(--color-bg);
 }
@@ -70,7 +64,6 @@
   color: var(--color-text);
 }
 
-/* ── Info cards ── */
 .contact__info-cards {
   display: flex;
   flex-direction: column;
@@ -114,7 +107,6 @@
   line-height: var(--leading-loose);
 }
 
-/* ── Responsive ── */
 @media (max-width: 900px) {
   .contact__grid {
     flex-direction: column;
@@ -130,5 +122,7 @@
 }
 
 @media (max-width: 767px) {
-  .contact__hero-title { font-size: var(--text-2xl); }
+  .contact__hero-title {
+    font-size: var(--text-2xl);
+  }
 }

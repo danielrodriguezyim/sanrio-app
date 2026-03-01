@@ -3,18 +3,9 @@ import type { CSSProperties } from 'react';
 import type { Character } from '../../types/character';
 import './CharacterCard.css';
 
-/* ----------------------------------------------------------------
-   IMAGE SPEC — character card portraits:
-   Files : public/images/characters/{character.id}.png
-   Size  : 400 × 400 px, transparent PNG (square canvas)
-   The image is displayed at 160 × 160 px in the carousel and
-   200 × 200 px on the full Characters page grid.
-   Source at 400 px gives clean 2× retina rendering at both sizes.
-   ---------------------------------------------------------------- */
-
 interface CharacterCardProps {
-  character:   Character;
-  isLarge?:    boolean; /* true on the Characters page grid */
+  character: Character;
+  isLarge?: boolean;
 }
 
 const CharacterCard = ({ character, isLarge = false }: CharacterCardProps) => {
@@ -42,7 +33,6 @@ const CharacterCard = ({ character, isLarge = false }: CharacterCardProps) => {
         <p className="character-card__description">{description}</p>
       </div>
 
-      {/* Decorative accent blob */}
       <div className="character-card__blob" aria-hidden="true" />
     </article>
   );

@@ -1,12 +1,11 @@
 .layout {
   display: flex;
   flex-direction: column;
-  min-height: 100dvh; /* dvh accounts for mobile browser chrome */
+  min-height: 100dvh;
 }
 
 .layout__main {
   flex: 1;
-  /* Offset for the fixed header so no content hides underneath */
   padding-top: var(--header-height);
 }
 

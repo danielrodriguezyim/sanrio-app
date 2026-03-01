@@ -8,17 +8,17 @@ interface CategoryOption {
 }
 
 const CATEGORY_OPTIONS: CategoryOption[] = [
-  { value: 'all',         label: 'All',         emoji: '✦' },
-  { value: 'stationery',  label: 'Stationery',  emoji: '✏️' },
-  { value: 'plush',       label: 'Plush',       emoji: '🧸' },
+  { value: 'all', label: 'All', emoji: '✦' },
+  { value: 'stationery', label: 'Stationery', emoji: '✏️' },
+  { value: 'plush', label: 'Plush', emoji: '🧸' },
   { value: 'accessories', label: 'Accessories', emoji: '💎' },
-  { value: 'apparel',     label: 'Apparel',     emoji: '👗' },
-  { value: 'home',        label: 'Home',        emoji: '🏠' },
+  { value: 'apparel', label: 'Apparel', emoji: '👗' },
+  { value: 'home', label: 'Home', emoji: '🏠' },
 ];
 
 interface CategoryFilterProps {
-  selectedCategory:  ProductCategory;
-  onCategoryChange:  (category: ProductCategory) => void;
+  selectedCategory: ProductCategory;
+  onCategoryChange: (category: ProductCategory) => void;
 }
 
 const CategoryFilter = ({ selectedCategory, onCategoryChange }: CategoryFilterProps) => (

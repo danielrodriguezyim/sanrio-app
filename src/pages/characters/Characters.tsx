@@ -1,46 +1,39 @@
-import { useState, useMemo }    from 'react';
+import { useState, useMemo } from 'react';
 import { motion, type Variants } from 'framer-motion';
 
-import CharacterCard  from '../../components/character-card/CharacterCard';
+import CharacterCard from '../../components/character-card/CharacterCard';
 import charactersData from '../../data/characters.json';
 import type { Character, CharacterCategory } from '../../types/character';
 import './Characters.css';
 
 const allCharacters = charactersData as Character[];
 
-/* ----------------------------------------------------------------
-   IMAGE SPEC — characters page grid portraits:
-   Same files as the carousel: public/images/characters/{id}.png
-   Displayed at 200 × 200 px via CharacterCard isLarge prop.
-   Source resolution: 400 × 400 px is sufficient for 2× retina.
-   ---------------------------------------------------------------- */
-
 const CATEGORY_FILTERS: { value: CharacterCategory | 'all'; label: string }[] = [
-  { value: 'all',           label: 'All' },
-  { value: 'classic',       label: 'Classic' },
-  { value: 'friends',       label: 'Friends' },
-  { value: 'seasonal',      label: 'Seasonal' },
+  { value: 'all', label: 'All' },
+  { value: 'classic', label: 'Classic' },
+  { value: 'friends', label: 'Friends' },
+  { value: 'seasonal', label: 'Seasonal' },
   { value: 'collaboration', label: 'Collaboration' },
 ];
 
 const containerVariants: Variants = {
-  hidden:  {},
+  hidden: {},
   visible: { transition: { staggerChildren: 0.07 } },
 };
 
 const cardVariants: Variants = {
-  hidden:  { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 16 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
 };
 
 const Characters = () => {
-  const [searchQuery,       setSearchQuery]       = useState('');
-  const [activeCategory,    setActiveCategory]    = useState<CharacterCategory | 'all'>('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState<CharacterCategory | 'all'>('all');
 
   const filteredCharacters = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
     return allCharacters.filter(character => {
-      const matchesSearch   = !query || character.name.toLowerCase().includes(query);
+      const matchesSearch = !query || character.name.toLowerCase().includes(query);
       const matchesCategory = activeCategory === 'all' || character.category === activeCategory;
       return matchesSearch && matchesCategory;
     });
@@ -50,7 +43,6 @@ const Characters = () => {
 
   return (
     <div className="characters">
-      {/* ── Page hero banner ── */}
       <section className="characters__hero">
         <div className="container characters__hero-inner">
           <motion.h1
@@ -76,11 +68,9 @@ const Characters = () => {
         </div>
       </section>
 
-      {/* ── Filters ── */}
       <section className="characters__controls section--sm">
         <div className="container">
 
-          {/* Search */}
           <div className="characters__search-wrap">
             <span className="characters__search-icon" aria-hidden="true">🔍</span>
             <input
@@ -93,7 +83,6 @@ const Characters = () => {
             />
           </div>
 
-          {/* Category pills */}
           <div className="characters__category-pills" role="group" aria-label="Filter by category">
             {CATEGORY_FILTERS.map(({ value, label }) => (
               <button
@@ -113,7 +102,6 @@ const Characters = () => {
         </div>
       </section>
 
-      {/* ── Grid ── */}
       <section className="characters__grid-section section--sm">
         <div className="container">
           {hasResults ? (
