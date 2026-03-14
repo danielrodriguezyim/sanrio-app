@@ -5,18 +5,20 @@ import type { Character } from '../types/character';
 
 const STORAGE_KEY = 'sanrio-characters';
 
+const saveToStorage = (characters: Character[]): void => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(characters));
+};
+
 const loadFromStorage = (): Character[] => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) return JSON.parse(raw) as Character[];
   } catch {
-    console.warn('[useCharacters] Failed to load from storage, using defaults.');
+    /* ignore parse errors */
   }
-  return defaultCharacters as Character[];
-};
-
-const saveToStorage = (characters: Character[]): void => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(characters));
+  const defaults = defaultCharacters as Character[];
+  saveToStorage(defaults);
+  return defaults;
 };
 
 const slugify = (name: string): string =>
