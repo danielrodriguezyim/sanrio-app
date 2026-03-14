@@ -302,3 +302,15 @@ npm run build && firebase deploy
 ---
 
 *Made with ♡.*
+
+---
+
+## 📡 RSS Feed — Proof of Implementation
+
+The RSS 2.0 feed is live and accessible at [`/feed.xml`](https://sanrio-c3d93.web.app/feed.xml). When opened in a browser, an XSLT stylesheet renders it as a fully styled page matching the site's aesthetic. RSS readers consume the same URL as a standard feed.
+
+### Browser view (`/feed.xml`)
+
+![RSS feed rendered in browser](./docs/rss-screenshot.png)
+
+> Each item in the feed links directly to its corresponding card on the [`/news`](https://sanrio-c3d93.web.app/news) page via anchor URLs (e.g. `/news#news-001`).
