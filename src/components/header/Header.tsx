@@ -10,9 +10,10 @@ interface NavItem {
 }
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', path: ROUTES.HOME },
-  { label: 'Characters', path: ROUTES.CHARACTERS },
-  { label: 'Contact', path: ROUTES.CONTACT },
+  { label: 'Home',       path: ROUTES.HOME       },
+  { label: 'Characters', path: ROUTES.CHARACTERS  },
+  { label: 'News',       path: ROUTES.NEWS        },
+  { label: 'Contact',    path: ROUTES.CONTACT     },
 ];
 
 const Header = () => {

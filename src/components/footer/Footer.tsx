@@ -33,6 +33,7 @@ const SOCIAL_LINKS: SocialLink[] = [
 const NAV_LINKS: FooterLink[] = [
   { label: 'Home', path: ROUTES.HOME },
   { label: 'Characters', path: ROUTES.CHARACTERS },
+  { label: 'News', path: ROUTES.NEWS },
   { label: 'Contact', path: ROUTES.CONTACT },
 ];
 

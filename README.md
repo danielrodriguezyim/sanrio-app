@@ -1,8 +1,14 @@
 # ★ Sanrio Friends Fan Store
 
-A responsive, multi-page fan web application celebrating the world of Sanrio. Browse beloved characters, explore a categorised product catalogue backed by Firebase, and get in touch through an interactive contact page — all wrapped in a cute-but-professional pastel aesthetic.
+A responsive, multi-page fan web application celebrating the world of Sanrio. Browse beloved characters, explore a categorised product catalogue backed by Firebase, manage news and updates through a full CRUD interface, and get in touch through an interactive contact page — all wrapped in a cute-but-professional pastel aesthetic.
 
 > **Disclaimer:** This is a fan-made, non-commercial project created for educational purposes. All Sanrio characters, names, and artwork are the intellectual property of [Sanrio Co., Ltd.](https://www.sanrio.com/) This project is not affiliated with, endorsed by, or connected to Sanrio in any way.
+
+---
+
+## 🌐 Live Site
+
+**[https://sanrio-c3d93.web.app](https://sanrio-c3d93.web.app)**
 
 ---
 
@@ -12,6 +18,7 @@ A responsive, multi-page fan web application celebrating the world of Sanrio. Br
 |---|---|
 | `/` | Home — Hero banner, character carousel, and filterable product grid |
 | `/characters` | Full character gallery with live search and category filtering |
+| `/news` | News & Updates — RSS reader with full CRUD (Create, Read, Update, Delete) |
 | `/contact` | Contact form with Firebase persistence and an interactive map |
 | `/terms-of-service` | Terms of Service |
 | `/privacy-policy` | Privacy Policy |
@@ -22,10 +29,13 @@ A responsive, multi-page fan web application celebrating the world of Sanrio. Br
 
 - **Character Carousel** — Swiper-powered showcase reading from a static JSON data file
 - **Product Catalogue** — Firebase Realtime Database–backed grid with client-side category filtering and loading skeletons
+- **News & Updates (CRUD)** — Full Create, Read, Update, and Delete for news items stored in Firebase Realtime Database, with animated card list and modal forms
+- **RSS Feed** — Valid RSS 2.0 feed served at `/feed.xml`, subscribable in any RSS reader; each item links directly to its card on the News page
 - **Contact Form** — React Hook Form with validation; submissions are saved to Firebase
 - **Interactive Map** — React-Leaflet map centred on Sanrio HQ in Tokyo
 - **Responsive Layout** — Mobile-first, flexbox throughout; hamburger drawer navigation on small screens
 - **Animated UI** — Entrance animations and micro-interactions via Framer Motion
+- **Firebase Hosting** — Deployed and served via Firebase Hosting
 - **404 Page** — Custom not-found screen with navigation back to safety
 
 ---
@@ -35,15 +45,16 @@ A responsive, multi-page fan web application celebrating the world of Sanrio. Br
 ### Core
 | Package | Purpose |
 |---|---|
-| [React 18](https://react.dev/) | UI library |
+| [React 19](https://react.dev/) | UI library |
 | [Vite](https://vitejs.dev/) | Build tool and dev server |
 | [TypeScript](https://www.typescriptlang.org/) | Static typing |
-| [React Router DOM v6](https://reactrouter.com/) | Client-side routing |
+| [React Router DOM v7](https://reactrouter.com/) | Client-side routing |
 
 ### Firebase
 | Package | Purpose |
 |---|---|
 | [Firebase JS SDK](https://firebase.google.com/docs/web/setup) | Realtime Database reads/writes |
+| [Firebase Hosting](https://firebase.google.com/docs/hosting) | Production deployment |
 
 ### Third-Party UI Components
 | Package | Purpose |
@@ -51,8 +62,8 @@ A responsive, multi-page fan web application celebrating the world of Sanrio. Br
 | [Swiper.js](https://swiperjs.com/) | Touch-friendly character carousel |
 | [React-Leaflet](https://react-leaflet.js.org/) + [Leaflet](https://leafletjs.com/) | Interactive map on the contact page |
 | [Framer Motion](https://www.framer.com/motion/) | Page entrance animations and transitions |
-| [React Hook Form](https://react-hook-form.com/) | Contact form state and validation |
-| [React Icons](https://react-icons.github.io/react-icons/) | Social media icons in the footer (Font Awesome 6) |
+| [React Hook Form](https://react-hook-form.com/) | Contact and news item form state and validation |
+| [React Icons](https://react-icons.github.io/react-icons/) | UI icons throughout (Feather set) |
 
 ### Fonts
 | Font | Usage | Source |
@@ -87,12 +98,14 @@ src/
 │   ├── firebase-config.ts # Firebase app initialisation
 │   └── database-service.ts# All Realtime Database read/write functions
 ├── hooks/
-│   └── use-products.ts    # Custom hook — fetches and filters products
+│   ├── use-products.ts    # Custom hook — fetches and filters products
+│   └── use-news.ts        # Custom hook — full CRUD for news items
 ├── pages/
 │   ├── characters/        # Full character gallery with search
 │   ├── contact/           # Contact form + map layout
 │   ├── home/              # Home page composition
 │   ├── legal/             # Shared Terms of Service / Privacy Policy page
+│   ├── news/              # News & Updates page with CRUD and RSS reader
 │   └── not-found/         # 404 page
 ├── router/
 │   ├── app-router.tsx     # Route definitions
@@ -102,9 +115,50 @@ src/
 │   └── global.css         # Reset, shared utilities, and animations
 ├── types/
 │   ├── character.ts       # Character and CharacterCategory types
-│   └── product.ts         # Product and ProductCategory types
+│   ├── product.ts         # Product and ProductCategory types
+│   └── news.ts            # NewsItem and NewsItemPayload types
 └── main.tsx               # App entry point
+
+public/
+└── feed.xml               # Static RSS 2.0 feed (updated manually on deploy)
 ```
+
+---
+
+## 📰 News & RSS
+
+### CRUD Interface
+The `/news` page provides a full Create, Read, Update, Delete interface for news items stored in Firebase Realtime Database:
+
+| Operation | How |
+|---|---|
+| **Create** | "Add Update" button → modal form → saved to Firebase |
+| **Read** | Items fetched on page load, sorted newest first, rendered as animated cards |
+| **Update** | ✏️ edit button on each card → pre-filled modal → updates Firebase |
+| **Delete** | 🗑 delete button on each card → confirm dialog → removed from Firebase |
+
+### NewsItem data shape
+```ts
+{
+  id:          string;   // Firebase push key
+  title:       string;
+  description: string;
+  url:         string;   // Points to /news#<id> for anchor scrolling
+  author:      string;
+  pubDate:     string;   // ISO 8601, set on creation
+}
+```
+
+### RSS Feed
+A valid RSS 2.0 file is served at:
+
+```
+https://sanrio-c3d93.web.app/feed.xml
+```
+
+Paste this URL into any RSS reader (Feedly, NetNewsWire, etc.) to subscribe. Each RSS item links directly to its corresponding card on the `/news` page (`/news#news-001` etc.), so clicking an item in your RSS reader scrolls you to that update on the site.
+
+> **Note:** `feed.xml` is a static file updated manually at deploy time. To sync it with the latest database content, export the current news items from Firebase and regenerate the file before running `npm run build && firebase deploy`.
 
 ---
 
@@ -112,7 +166,7 @@ src/
 
 ### Prerequisites
 - Node.js 18+
-- A Firebase project with the **Realtime Database** enabled
+- A Firebase project with **Realtime Database** and **Hosting** enabled
 
 ### Installation
 
@@ -155,15 +209,23 @@ In the Firebase console under **Realtime Database → Rules**, set:
     "contact-messages": {
       ".read": false,
       ".write": true
+    },
+    "news-items": {
+      ".read": true,
+      ".write": true
     }
   }
 }
 ```
 
+> ⚠️ The `news-items` rules are open for demonstration purposes. In production, restrict `.write` to authenticated admin users.
+
 ### Seed the Database
 
-Import `rtdb-import.json` from the Firebase console:
+Import `database-merged.json` from the Firebase console:
 **Realtime Database → ⋮ menu → Import JSON**
+
+This seeds both the product catalogue and the initial news items.
 
 ### Run Locally
 
@@ -179,6 +241,12 @@ The app will be available at `http://localhost:5173`.
 npm run build
 ```
 
+### Deploy to Firebase
+
+```bash
+npm run build && firebase deploy
+```
+
 ---
 
 ## 🎨 Design Decisions
@@ -188,6 +256,7 @@ npm run build
 - **Mobile-first** — Base styles target small screens; `min-width` media queries progressively enhance the layout upward.
 - **No CSS Grid** — All layouts are built exclusively with flexbox as a project constraint.
 - **Client-side filtering** — Product category filtering is handled in memory via `useMemo` rather than per-filter database queries, eliminating the need for composite indexes and reducing read costs.
+- **Shared modal pattern** — The news Create and Edit operations share a single `NewsModal` component driven by a `mode` prop, keeping form logic DRY and consistent.
 
 ---
 
@@ -201,11 +270,13 @@ npm run build
 - [React Docs](https://react.dev/reference/react)
 - [Vite Docs](https://vitejs.dev/guide/)
 - [Firebase Realtime Database Docs](https://firebase.google.com/docs/database/web/start)
+- [Firebase Hosting Docs](https://firebase.google.com/docs/hosting)
 - [React Router Docs](https://reactrouter.com/en/main)
 - [Swiper.js React Components](https://swiperjs.com/react)
 - [React-Leaflet Docs](https://react-leaflet.js.org/docs/start-introduction/)
 - [Framer Motion Docs](https://www.framer.com/motion/)
 - [React Hook Form Docs](https://react-hook-form.com/get-started)
+- [RSS 2.0 Specification](https://www.rssboard.org/rss-specification)
 
 ### Design Inspiration
 - [Dribbble — Kawaii UI](https://dribbble.com/search/kawaii-ui) — Pastel interface exploration
@@ -225,8 +296,8 @@ npm run build
 | CSS classes / IDs | kebab-case | `.character-card__name` |
 | Variables / functions | camelCase | `fetchProducts` |
 | Booleans | is / has / should prefix | `isLoading`, `hasError` |
-| Routes | kebab-case | `/characters`, `/contact` |
-| Types / Interfaces | PascalCase | `Product`, `CharacterCategory` |
+| Routes | kebab-case | `/characters`, `/news` |
+| Types / Interfaces | PascalCase | `Product`, `NewsItem` |
 
 ---
 

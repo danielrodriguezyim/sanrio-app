@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sanrio Store — News &amp; Updates</title>
+    <link>https://sanrio-c3d93.web.app/news</link>
+    <atom:link href="https://sanrio-c3d93.web.app/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>The latest news, arrivals, and updates from the Sanrio Store.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Mar 2026 10:00:00 GMT</lastBuildDate>
+    <managingEditor>team@sanrio-store.com (Sanrio Team)</managingEditor>
+    <image>
+      <url>https://sanrio-c3d93.web.app/images/sanrio-favicon.png</url>
+      <title>Sanrio Store</title>
+      <link>https://sanrio-c3d93.web.app</link>
+    </image>
+
+    <item>
+      <title>Spring 2026 Collection Has Arrived! 🌸</title>
+      <link>https://sanrio-c3d93.web.app/news#news-001</link>
+      <guid isPermaLink="true">https://sanrio-c3d93.web.app/news#news-001</guid>
+      <description>Our brand-new spring lineup is here, featuring pastel-themed plush, stationery sets, and limited-edition Hello Kitty accessories. Perfect for gifting or treating yourself this season.</description>
+      <author>Sanrio Team</author>
+      <pubDate>Sat, 14 Mar 2026 10:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Cinnamoroll Turns 23 — Celebrate With Us! 🎂</title>
+      <link>https://sanrio-c3d93.web.app/news#news-002</link>
+      <guid isPermaLink="true">https://sanrio-c3d93.web.app/news#news-002</guid>
+      <description>Everyone&apos;s favourite fluffy puppy is celebrating his 23rd birthday this month. Join us for exclusive in-store events, a limited birthday plush drop, and a week of special discounts.</description>
+      <author>Sanrio Team</author>
+      <pubDate>Tue, 10 Mar 2026 09:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>New Kuromi × Streetwear Collaboration Drops This Friday</title>
+      <link>https://sanrio-c3d93.web.app/news#news-003</link>
+      <guid isPermaLink="true">https://sanrio-c3d93.web.app/news#news-003</guid>
+      <description>Kuromi goes edgy-chic in our latest streetwear collab. Hoodies, tote bags, and caps featuring bold new artwork — available online and in selected stores from Friday 13th March.</description>
+      <author>Sanrio Team</author>
+      <pubDate>Sun, 08 Mar 2026 12:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Free Shipping on All Orders Over $35 This Weekend</title>
+      <link>https://sanrio-c3d93.web.app/news#news-004</link>
+      <guid isPermaLink="true">https://sanrio-c3d93.web.app/news#news-004</guid>
+      <description>From Friday through Sunday, enjoy free standard shipping on any order over $35. Stock up on your favourite characters — no promo code needed, discount applied automatically at checkout.</description>
+      <author>Sanrio Store</author>
+      <pubDate>Thu, 05 Mar 2026 08:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>My Melody Stationery Set Restocked After Selling Out</title>
+      <link>https://sanrio-c3d93.web.app/news#news-005</link>
+      <guid isPermaLink="true">https://sanrio-c3d93.web.app/news#news-005</guid>
+      <description>By popular demand, the My Melody pastel stationery set is back in stock. Includes a notebook, sticky notes, washi tape, and a pen pouch — all in the iconic pink and white palette.</description>
+      <author>Sanrio Store</author>
+      <pubDate>Sat, 28 Feb 2026 14:00:00 GMT</pubDate>
+    </item>
+
+  </channel>
+</rss>
