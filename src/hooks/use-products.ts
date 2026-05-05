@@ -1,8 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 
-import { fetchProducts } from '../firebase/database-service';
-import type { Product } from '../types/product';
-import type { ProductCategory } from '../types/product';
+import { fetchProducts } from '../services/products-service';
+import type { Product, ProductCategory } from '../types/product';
 
 interface UseProductsResult {
   products: Product[];
@@ -21,7 +20,6 @@ const useProducts = (category: ProductCategory): UseProductsResult => {
     const loadProducts = async () => {
       setIsLoading(true);
       setHasError(false);
-
       try {
         const data = await fetchProducts();
         if (!isCancelled) setAllProducts(data);
@@ -34,7 +32,6 @@ const useProducts = (category: ProductCategory): UseProductsResult => {
     };
 
     loadProducts();
-
     return () => { isCancelled = true; };
   }, []);
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <name>Hello Kitty Plush 20cm</name>
+        <description>A super-soft Hello Kitty plush in her iconic red bow. Perfect for gifting.</description>
+        <imageUrl>
+            https://www.top1toys.nl/media/catalog/product/d/4/d4631d3fd9396570e1d4f5f44d5cb6ef.jpg</imageUrl>
+        <price>19.99</price>
+        <category>plush</category>
+        <isFeatured>true</isFeatured>
+        <isNew>false</isNew>
+        <tags>
+            <tag>hello-kitty</tag>
+            <tag>plush</tag>
+            <tag>classic</tag>
+        </tags>
+    </product>
+    <product>
+        <name>Kuromi Mini Backpack</name>
+        <description>Compact faux-leather backpack with Kuromi embroidery. Fits daily essentials.</description>
+        <imageUrl>https://cdn.media.amplience.net/s/hottopic/15229292_hi</imageUrl>
+        <price>39.99</price>
+        <category>accessories</category>
+        <isFeatured>false</isFeatured>
+        <isNew>true</isNew>
+        <tags>
+            <tag>kuromi</tag>
+            <tag>backpack</tag>
+            <tag>accessories</tag>
+        </tags>
+    </product>
+    <product>
+        <name>Cinnamoroll Sticker Pack</name>
+        <description>60 high-quality vinyl stickers featuring Cinnamoroll and friends. Waterproof.</description>
+        <imageUrl>https://kawaii-panda.com/14147/set-washi-tapes-soda-can-hello-kitty.jpg</imageUrl>
+        <price>8.99</price>
+        <category>stationery</category>
+        <isFeatured>false</isFeatured>
+        <isNew>true</isNew>
+        <tags>
+            <tag>cinnamoroll</tag>
+            <tag>stickers</tag>
+            <tag>stationery</tag>
+        </tags>
+    </product>
+</products>

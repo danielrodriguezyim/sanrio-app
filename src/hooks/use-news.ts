@@ -5,7 +5,7 @@ import {
   createNewsItem,
   updateNewsItem,
   deleteNewsItem,
-} from '../firebase/database-service';
+} from '../services/news-service';
 import type { NewsItem, NewsItemPayload } from '../types/news';
 
 interface UseNewsResult {
@@ -13,7 +13,7 @@ interface UseNewsResult {
   isLoading: boolean;
   hasError: boolean;
   create: (payload: NewsItemPayload) => Promise<void>;
-  edit:   (id: string, payload: NewsItemPayload) => Promise<void>;
+  edit: (id: string, payload: NewsItemPayload) => Promise<void>;
   remove: (id: string) => Promise<void>;
 }
 

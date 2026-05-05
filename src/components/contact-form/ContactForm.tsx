@@ -1,6 +1,6 @@
 import { useForm, type SubmitHandler } from 'react-hook-form';
 
-import { saveContactMessage, type ContactMessagePayload } from '../../firebase/database-service';
+import { saveContactMessage, type ContactMessagePayload } from '../../services/contact-service';
 import './ContactForm.css';
 
 type ContactFormFields = ContactMessagePayload;

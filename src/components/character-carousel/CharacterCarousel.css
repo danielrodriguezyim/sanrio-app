@@ -1,5 +1,6 @@
 .character-carousel {
   background: var(--color-bg-soft);
+  overflow: hidden;
 }
 
 .character-carousel__header {
